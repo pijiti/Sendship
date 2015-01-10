@@ -1,0 +1,26 @@
+doctype html
+html
+  = render 'layouts/head'
+
+  body#layouts-application
+    #layouts-application-inner
+
+      header#layouts-application-header
+
+        nav.navbar.navbar-inverse.navbar-fixed-top
+          .navbar-content.container
+
+            .navbar-header
+              a.lnk-root.navbar-brand href=root_path Demo
+
+            .navbar-body
+
+              ul.nav.navbar-nav
+                li : a.lnk-root href=root_path Welcome
+
+      #layouts-application-body.container
+
+        - flash.each do |_, msg|
+          = render 'notifies/notify', msg: msg
+
+        = yield
