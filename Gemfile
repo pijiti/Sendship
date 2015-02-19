@@ -11,7 +11,6 @@ gem 'thin'
 
 gem 'simple_form', '~> 3.1.0'
 
-
 ## Assets
 
 gem 'bootstrap-sass', '~> 3.3.1.0'

@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-
-  root 'welcomes#index'
+  root 'stores#index'
+  resources :stores
 end
