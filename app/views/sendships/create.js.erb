@@ -1,0 +1,5 @@
+sender = $(".store[data-id='<%= @sendship.sender_id %>']");
+sender.find(".batch[data-id='<%= @sendship.batch_id %>']").remove();
+
+receiver = $(".store[data-id='<%= @sendship.receiver_id %>']");
+receiver.find(".batches").prepend("<%=j render @sendship.batch %>");

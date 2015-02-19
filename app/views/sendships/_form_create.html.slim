@@ -1,0 +1,9 @@
+.sendships-form-create
+
+  = simple_form_for sendship,
+                    defaults: {label: false},
+                    remote: true,
+                    url:    sendships_path(sender_id: sendship.sender, batch_id: sendship.batch) do |f|
+                    
+    = f.input :receiver_id, collection: Store.where.not(id: sendship.sender)
+    .actions.pull-right = f.button :submit, class: 'btn-primary btn-sm', value: 'Send!'

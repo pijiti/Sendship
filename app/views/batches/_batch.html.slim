@@ -1,0 +1,9 @@
+- last_sender = batch.sendships.last.try :sender
+- last_receiver = batch.sendships.last.try :receiver
+
+tr.batch data-id=batch.id
+  td.id = batch.id
+  td.name = batch.name
+  td.last-sent
+    = "#{last_sender.try :name} => #{last_receiver.try :name}" if batch.sendships.last
+  td.send = render 'sendships/form_create', sendship: batch.sendships.build(sender: batch.store)

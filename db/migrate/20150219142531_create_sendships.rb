@@ -4,6 +4,7 @@ class CreateSendships < ActiveRecord::Migration
     create_table :sendships do |t|
       t.timestamps
 
+      t.references :batch,    index: true
       t.references :sender,   index: true
       t.references :receiver, index: true
     end

@@ -5,8 +5,7 @@ class CreateBatches < ActiveRecord::Migration
       t.string  :name
 
       t.timestamps
-      t.references :sendship, index: true
-      t.references :store,    index: true
+      t.references :store, index: true
     end
   end
 

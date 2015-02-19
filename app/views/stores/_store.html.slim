@@ -1,0 +1,13 @@
+.store.well data-id=store.id
+
+  h2.name = store.name
+
+  table.table
+    thead
+      tr
+        th #
+        th Name
+        th Last Sent
+        th Please select Reciver to issue a new Send:
+    tbody.batches
+      = render store.batches
